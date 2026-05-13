@@ -11,10 +11,6 @@ enum LogLevel{
 static func _log(logLevel : LogLevel, ...args) -> void:
   var prefix_string  := ""
   var stack := get_stack()
-  var message := ""
-
-  for arg in args: 
-    message += arg[0]
 
   match logLevel:
     LogLevel.INFO:
@@ -26,7 +22,7 @@ static func _log(logLevel : LogLevel, ...args) -> void:
     LogLevel.ERROR:
       prefix_string = "[b][color=Salmon] [ ERROR ] [/color][/b]"
   
-  print_rich(prefix_string, stack[2]["source"]," | ", stack[2]["function"], "()  line:", stack[2]["line"], " : ", message );
+  print_rich(prefix_string, stack[2]["source"]," | ", stack[2]["function"], "()  line:", stack[2]["line"], " : ", " ".join(args));
 
 
 static func info(...args) -> void:
