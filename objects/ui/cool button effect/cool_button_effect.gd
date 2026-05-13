@@ -18,8 +18,8 @@ func _on_button_mouse_entered():
   if loop_tween:
     loop_tween.kill()
   loop_tween = create_tween().set_loops()
-  loop_tween.tween_property(button, "rotation_degrees",  5.0, 0.3).set_trans(Tween.TRANS_SINE)
-  loop_tween.tween_property(button, "rotation_degrees", -5.0, 0.3).set_trans(Tween.TRANS_SINE)
+  loop_tween.tween_property(button, "rotation_degrees",  5.0, 0.2).set_trans(Tween.TRANS_SINE)
+  loop_tween.tween_property(button, "rotation_degrees", -5.0, 0.2).set_trans(Tween.TRANS_SINE)
   one_tween.tween_property(button, "scale:x", 1.1, 0.2).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
   one_tween.parallel().tween_property(button, "scale:y", 1.1, 0.2).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
 
@@ -31,4 +31,4 @@ func _on_button_mouse_exited():
   loop_tween.kill()
   one_tween.tween_property(button, "scale:x", 1.0, 0.2).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
   one_tween.parallel().tween_property(button, "scale:y", 1.0, 0.2).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
-  one_tween.parallel().tween_property(button, "rotation_degrees", 0.0, 0.15).set_trans(Tween.TRANS_SINE)
+  one_tween.parallel().tween_property(button, "rotation_degrees", 0.0, 0.1).set_trans(Tween.TRANS_SINE)
