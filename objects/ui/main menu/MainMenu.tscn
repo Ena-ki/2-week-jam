@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cupy1gip6dlfq" path="res://objects/ui/cool button effect/cool_button_effect.gd" id="1_bbr16"]
 [ext_resource type="Script" uid="uid://d038lftbgn8br" path="res://objects/ui/main menu/main_menu.gd" id="1_imqii"]
+[ext_resource type="PackedScene" uid="uid://djci7kgw1elaj" path="res://objects/ui/loading screen/LoadingScreen.tscn" id="2_dvjg5"]
 [ext_resource type="PackedScene" uid="uid://bgsmeydutq4ml" path="res://objects/ui/main menu/settings menu/SettingMenu.tscn" id="3_m2qiq"]
 
 [node name="MainMenu" type="Control" unique_id=1114269058 node_paths=PackedStringArray("startButton", "optionsButton", "quitButton", "base_menu", "options_menu")]
@@ -17,6 +18,8 @@ optionsButton = NodePath("MarginContainer/HBoxContainer/ButtonContainer/Control2
 quitButton = NodePath("MarginContainer/HBoxContainer/ButtonContainer/Control3/QuitButton")
 base_menu = NodePath("MarginContainer")
 options_menu = NodePath("SettingMenu")
+loading_screen = ExtResource("2_dvjg5")
+cutscene_scene = "uid://c4h2inlyygda4"
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=545559888]
 layout_mode = 1
