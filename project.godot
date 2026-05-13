@@ -14,6 +14,10 @@ config/name="2weekjam"
 run/main_scene="uid://6m7hfle50nqm"
 config/features=PackedStringArray("4.6", "Mobile")
 
+[autoload]
+
+SceneLoader="*uid://bw73wa3u7gwrg"
+
 [display]
 
 window/size/viewport_width=1920
