@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dbu8ktus00h5s"]
+
+[ext_resource type="Script" uid="uid://eyx8ksj3ucky" path="res://objects/entities/player/interaction area/interaction_area.gd" id="1_4j7c5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p7fof"]
+
+[node name="InteractionArea" type="Area2D" unique_id=472493423 node_paths=PackedStringArray("_collision_shape")]
+script = ExtResource("1_4j7c5")
+_collision_shape = NodePath("CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1641092605]
+shape = SubResource("CircleShape2D_p7fof")
