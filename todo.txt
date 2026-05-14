@@ -1,0 +1,12 @@
+player
+player spawn point
+npc handler for ui, since dialogue needs to stop the game
+
+dialogue system:
+  the npc will have a chatbox above its head
+  it will send the signal to the handler and the handler will send signal to the level
+  level will stop and move the camera to the npc, and turingn the camera back after the dialogue finishes
+
+npc:
+  characterbody inheritant base class
+  interactable

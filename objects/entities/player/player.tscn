@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cs710ahkm3mvs"]
 
-[ext_resource type="Script" uid="uid://dfm0ykfnjexk3" path="res://objects/player/player.gd" id="1_cqmt1"]
+[ext_resource type="Script" uid="uid://dfm0ykfnjexk3" path="res://objects/entities/player/player.gd" id="1_cqmt1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cqmt1"]
 

@@ -41,7 +41,6 @@ func _process(_delta: float) -> void:
   match load_status:
     ResourceLoader.THREAD_LOAD_INVALID_RESOURCE, ResourceLoader.THREAD_LOAD_FAILED:
       set_process(false)
-      Log.error("scene loading failed")
     ResourceLoader.THREAD_LOAD_LOADED:
       loaded_reasource = ResourceLoader.load_threaded_get(scene_path)
       get_tree().change_scene_to_packed(loaded_reasource)
