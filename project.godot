@@ -23,7 +23,7 @@ SceneLoader="*uid://bw73wa3u7gwrg"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+window/vsync/vsync_mode=0
 
 [dotnet]
 
