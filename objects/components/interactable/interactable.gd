@@ -17,7 +17,7 @@ var _was_interacted_with : bool = false
 
 func interact(player: Player) -> void:
   for effect in interaction_effects:
-    effect.apply(player)
+    effect.apply(self, player)
   interacted.emit(player)
   return
   
@@ -28,17 +28,23 @@ func is_empty():
 
 func _process(delta: float) -> void:
   if !_was_interacted_with && !_bodies_inside.is_empty() && interaction_progress < interaction_time:
+    #find closest
+    var closest := _bodies_inside[0]
+    for body in _bodies_inside:
+      if body.position.distance_to(position) < closest.position.distance_to(position):
+        closest = body
+
+    for condition in interaction_conditions:
+      if !condition.is_met(closest):
+        _bodies_inside.erase(closest)
+        return
+    
     interaction_progress += delta
     interaction_progress_changed.emit(interaction_progress)
     interaction_progress = min(interaction_time, interaction_progress)
     if is_equal_approx(interaction_time, interaction_progress):
       _was_interacted_with = true
-      var small := _bodies_inside[0]
-      for body in _bodies_inside:
-        if body.position.distance_to(position) < small.position.distance_to(position):
-          small = body
-  
-      interacted.emit(small)
+      interact(closest)
   elif _was_interacted_with || (_bodies_inside.is_empty() && interaction_progress > 0):
     interaction_progress -= delta * interaction_degradation_speed
     interaction_progress_changed.emit(interaction_progress)

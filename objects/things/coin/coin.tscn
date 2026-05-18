@@ -5,11 +5,22 @@
 [ext_resource type="Shader" uid="uid://cg38uwval531p" path="res://objects/things/coin/interacting.gdshader" id="2_8ym68"]
 [ext_resource type="Script" uid="uid://p021gak3coyy" path="res://objects/components/interactable/interactable.gd" id="2_dj64t"]
 [ext_resource type="Script" uid="uid://bd1v7x74l2mf1" path="res://objects/components/interactable/interaction_effect.gd" id="5_qg7y3"]
+[ext_resource type="Script" uid="uid://carr4d52hy5oj" path="res://objects/components/interactable/interaction_condition.gd" id="5_r5shi"]
 [ext_resource type="Resource" uid="uid://c8gxfur6stu7b" path="res://objects/components/interactable/interaction_effects/interaction_remove.tres" id="6_ngx64"]
+[ext_resource type="Script" uid="uid://clysno2p1jvco" path="res://objects/components/interactable/interaction_conditions/interaction_cond_points.gd" id="6_re7nn"]
+[ext_resource type="Script" uid="uid://dceprygfu6g7f" path="res://objects/components/interactable/interaction_effects/interact_effect_points_add.gd" id="9_i6ape"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u8rh8"]
 shader = ExtResource("2_8ym68")
 shader_parameter/progress = 0.0
+
+[sub_resource type="Resource" id="Resource_fv22e"]
+script = ExtResource("6_re7nn")
+metadata/_custom_type_script = "uid://clysno2p1jvco"
+
+[sub_resource type="Resource" id="Resource_4lnsf"]
+script = ExtResource("9_i6ape")
+metadata/_custom_type_script = "uid://dceprygfu6g7f"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8ym68"]
 radius = 55.443665
@@ -31,23 +42,25 @@ texture = ExtResource("1_r70bt")
 
 [node name="Interactable" type="Area2D" parent="." unique_id=1607860232]
 script = ExtResource("2_dj64t")
-interaction_effects = Array[ExtResource("5_qg7y3")]([ExtResource("6_ngx64")])
-interaction_time = 0.4
+interaction_conditions = Array[ExtResource("5_r5shi")]([SubResource("Resource_fv22e")])
+interaction_effects = Array[ExtResource("5_qg7y3")]([ExtResource("6_ngx64"), SubResource("Resource_4lnsf")])
+interaction_time = 0.2
 metadata/_custom_type_script = "uid://p021gak3coyy"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=1525278576]
 shape = SubResource("CircleShape2D_8ym68")
 
 [node name="Label" type="Label" parent="." unique_id=543320114]
-offset_left = -48.0
-offset_top = -106.0
-offset_right = 49.0
-offset_bottom = -48.0
-text = "코인
+offset_left = -94.0
+offset_top = -102.0
+offset_right = 95.0
+offset_bottom = 17.0
+text = "코인 - 10
 "
 horizontal_alignment = 1
 
 [node name="previewArea" type="Area2D" parent="." unique_id=499258324]
+visible = false
 script = ExtResource("2_dj64t")
 metadata/_custom_type_script = "uid://p021gak3coyy"
 
