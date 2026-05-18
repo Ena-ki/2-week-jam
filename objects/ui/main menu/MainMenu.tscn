@@ -3,7 +3,17 @@
 [ext_resource type="Script" uid="uid://cupy1gip6dlfq" path="res://objects/ui/cool button effect/cool_button_effect.gd" id="1_bbr16"]
 [ext_resource type="Script" uid="uid://d038lftbgn8br" path="res://objects/ui/main menu/main_menu.gd" id="1_imqii"]
 [ext_resource type="PackedScene" uid="uid://bgsmeydutq4ml" path="res://objects/ui/main menu/settings menu/SettingMenu.tscn" id="3_m2qiq"]
+[ext_resource type="Shader" uid="uid://b2er3035y6ly4" path="res://objects/ui/main menu/alt.gdshader" id="3_p4rhc"]
 [ext_resource type="Texture2D" uid="uid://d1nhm0yxrgj4j" path="res://objects/ui/main menu/main_background.png" id="4_dvjg5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_60hmj"]
+shader = ExtResource("3_p4rhc")
+shader_parameter/bottom_color = Color(0.9529412, 1, 0.9137255, 1)
+shader_parameter/top_color = Color(0.1882353, 0.46666667, 0.6392157, 1)
+shader_parameter/wave_amp = 0.5
+shader_parameter/wave_size = 1.522000024795
+shader_parameter/wave_time_mul = 0.19200000586012
+shader_parameter/total_phases = 8
 
 [node name="MainMenu" type="Control" unique_id=1114269058 node_paths=PackedStringArray("startButton", "optionsButton", "quitButton", "base_menu", "options_menu")]
 layout_mode = 3
@@ -20,7 +30,17 @@ base_menu = NodePath("MarginContainer")
 options_menu = NodePath("SettingMenu")
 initial_scene = "uid://c4h2inlyygda4"
 
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=609016587]
+material = SubResource("ShaderMaterial_60hmj")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="TextureRect" type="TextureRect" parent="." unique_id=167997976]
+visible = false
 layout_mode = 0
 offset_top = -9.0
 offset_right = 2500.0
@@ -123,8 +143,8 @@ theme_override_constants/separation = 58
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1928391392]
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
-theme_override_colors/default_color = Color(0.30898795, 0.6297894, 0.81411064, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/default_color = Color(0.94509804, 0.69803923, 0.24313726, 1)
+theme_override_colors/font_outline_color = Color(0.9529412, 1, 0.9137255, 1)
 theme_override_constants/outline_size = 57
 theme_override_font_sizes/normal_font_size = 150
 text = "Fishy Business"

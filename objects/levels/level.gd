@@ -1,2 +1,2 @@
 class_name Level
-extends Node
+extends Node2D

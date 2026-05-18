@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="InteractionEffectRemove" format=3 uid="uid://c8gxfur6stu7b"]
+
+[ext_resource type="Script" uid="uid://ca4b8fg2tiwac" path="res://objects/components/interactable/interaction_effects/interact_effect_remove.gd" id="1_k7clk"]
+
+[resource]
+script = ExtResource("1_k7clk")
+metadata/_custom_type_script = "uid://ca4b8fg2tiwac"

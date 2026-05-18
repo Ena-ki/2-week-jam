@@ -1,12 +1,21 @@
-player
-player spawn point
-npc handler for ui, since dialogue needs to stop the game
+player:
+  interactor - doing right now
+  items:
+    a lot of items 
+  inventory
 
-dialogue system:
-  the npc will have a chatbox above its head
-  it will send the signal to the handler and the handler will send signal to the level
-  level will stop and move the camera to the npc, and turingn the camera back after the dialogue finishes
+level:
+  interactable - doing right now
+  tilemap:
+    make like 4 levels
+  objective
+  shop:
+    scene changing wihtout deleting everything
+  enemies:
+    difficulty change on higher levels
+  timer thing
 
-npc:
-  characterbody inheritant base class
-  interactable
+game loop
+save system
+sounds
+art

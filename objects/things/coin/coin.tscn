@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://c63gjhh1jgb7d"]
+
+[ext_resource type="Script" uid="uid://ciaiw2d35wr6a" path="res://objects/things/coin/coin.gd" id="1_dj64t"]
+[ext_resource type="Texture2D" uid="uid://snpgmq5jp27y" path="res://objects/things/coin/migan.jpg" id="1_r70bt"]
+[ext_resource type="Shader" uid="uid://cg38uwval531p" path="res://objects/things/coin/interacting.gdshader" id="2_8ym68"]
+[ext_resource type="Script" uid="uid://p021gak3coyy" path="res://objects/components/interactable/interactable.gd" id="2_dj64t"]
+[ext_resource type="Script" uid="uid://bd1v7x74l2mf1" path="res://objects/components/interactable/interaction_effect.gd" id="5_qg7y3"]
+[ext_resource type="Resource" uid="uid://c8gxfur6stu7b" path="res://objects/components/interactable/interaction_effects/interaction_remove.tres" id="6_ngx64"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u8rh8"]
+shader = ExtResource("2_8ym68")
+shader_parameter/progress = 0.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ym68"]
+radius = 55.443665
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u8rh8"]
+radius = 247.34187
+
+[node name="Coin" type="Node2D" unique_id=1023680135 node_paths=PackedStringArray("interactable", "preview_area", "sprite", "preview")]
+script = ExtResource("1_dj64t")
+interactable = NodePath("Interactable")
+preview_area = NodePath("previewArea")
+sprite = NodePath("Sprite2D")
+preview = NodePath("Label")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=379497629]
+material = SubResource("ShaderMaterial_u8rh8")
+scale = Vector2(0.12771739, 0.12771739)
+texture = ExtResource("1_r70bt")
+
+[node name="Interactable" type="Area2D" parent="." unique_id=1607860232]
+script = ExtResource("2_dj64t")
+interaction_effects = Array[ExtResource("5_qg7y3")]([ExtResource("6_ngx64")])
+interaction_time = 0.4
+metadata/_custom_type_script = "uid://p021gak3coyy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=1525278576]
+shape = SubResource("CircleShape2D_8ym68")
+
+[node name="Label" type="Label" parent="." unique_id=543320114]
+offset_left = -48.0
+offset_top = -106.0
+offset_right = 49.0
+offset_bottom = -48.0
+text = "코인
+"
+horizontal_alignment = 1
+
+[node name="previewArea" type="Area2D" parent="." unique_id=499258324]
+script = ExtResource("2_dj64t")
+metadata/_custom_type_script = "uid://p021gak3coyy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="previewArea" unique_id=1542907421]
+shape = SubResource("CircleShape2D_u8rh8")

@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://dy1omfm1dansy"]
+
+[ext_resource type="Script" uid="uid://dkkp0q0xyvsgq" path="res://objects/levels/level.gd" id="1_tn571"]
+[ext_resource type="PackedScene" uid="uid://cs710ahkm3mvs" path="res://objects/entities/player/player.tscn" id="2_3lctl"]
+[ext_resource type="PackedScene" uid="uid://c63gjhh1jgb7d" path="res://objects/things/coin/coin.tscn" id="3_27l3e"]
+
+[sub_resource type="Gradient" id="Gradient_27l3e"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.7017437, 1, 0.6752894, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ohxw8"]
+gradient = SubResource("Gradient_27l3e")
+
+[node name="TestLevel" type="Node2D" unique_id=2143627146]
+script = ExtResource("1_tn571")
+metadata/_custom_type_script = "uid://dkkp0q0xyvsgq"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1076359436]
+position = Vector2(958.5, 566)
+scale = Vector2(30.953125, 18.6875)
+texture = SubResource("GradientTexture2D_ohxw8")
+
+[node name="Player" parent="." unique_id=1092375324 instance=ExtResource("2_3lctl")]
+position = Vector2(464, 506)
+
+[node name="Coin" parent="." unique_id=1023680135 instance=ExtResource("3_27l3e")]
+position = Vector2(772, 332)
+
+[node name="Coin2" parent="." unique_id=378627029 instance=ExtResource("3_27l3e")]
+position = Vector2(1081, 324)
+
+[node name="Coin3" parent="." unique_id=437473741 instance=ExtResource("3_27l3e")]
+position = Vector2(1363, 302)
+
+[node name="Coin4" parent="." unique_id=1381818280 instance=ExtResource("3_27l3e")]
+position = Vector2(1544, 664)
+
+[node name="Coin5" parent="." unique_id=776856081 instance=ExtResource("3_27l3e")]
+position = Vector2(599, 558)
+
+[node name="Coin6" parent="." unique_id=1666015965 instance=ExtResource("3_27l3e")]
+position = Vector2(908, 550)
+
+[node name="Coin7" parent="." unique_id=1972727102 instance=ExtResource("3_27l3e")]
+position = Vector2(1190, 528)
+
+[node name="Coin8" parent="." unique_id=278739767 instance=ExtResource("3_27l3e")]
+position = Vector2(1371, 890)
+
+[node name="Coin9" parent="." unique_id=1757594066 instance=ExtResource("3_27l3e")]
+position = Vector2(599, 426)
+
+[node name="Coin10" parent="." unique_id=2036707176 instance=ExtResource("3_27l3e")]
+position = Vector2(908, 418)
+
+[node name="Coin11" parent="." unique_id=1465695495 instance=ExtResource("3_27l3e")]
+position = Vector2(1190, 396)
+
+[node name="Coin12" parent="." unique_id=150502342 instance=ExtResource("3_27l3e")]
+position = Vector2(1371, 758)

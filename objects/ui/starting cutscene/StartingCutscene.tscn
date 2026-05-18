@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c4h2inlyygda4"]
 
-[ext_resource type="Script" uid="uid://deag0n3rq4kfn" path="res://objects/starting cutscene/starting_cutscene.gd" id="1_0tpxn"]
-[ext_resource type="Texture2D" uid="uid://hjhwwb26ja1b" path="res://objects/starting cutscene/71de69fee050ae94cfcf233409e4d932.jpg" id="1_pnyt8"]
+[ext_resource type="Script" uid="uid://deag0n3rq4kfn" path="res://objects/ui/starting cutscene/starting_cutscene.gd" id="1_0tpxn"]
+[ext_resource type="Texture2D" uid="uid://hjhwwb26ja1b" path="res://objects/ui/starting cutscene/71de69fee050ae94cfcf233409e4d932.jpg" id="1_pnyt8"]
 
 [sub_resource type="Animation" id="Animation_pnyt8"]
 length = 0.001
@@ -91,6 +91,7 @@ _data = {
 [node name="StartingCutscene" type="Node2D" unique_id=1743606464 node_paths=PackedStringArray("animation_player")]
 script = ExtResource("1_0tpxn")
 animation_player = NodePath("AnimationPlayer")
+game = "uid://dy1omfm1dansy"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=296385997]
 libraries/ = SubResource("AnimationLibrary_pnyt8")
@@ -102,3 +103,10 @@ offset_right = 1760.0002
 offset_bottom = 699.0004
 pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("1_pnyt8")
+
+[node name="Label" type="Label" parent="." unique_id=1774943335]
+offset_left = 687.0
+offset_top = 65.0
+offset_right = 1163.0
+offset_bottom = 409.0
+text = "(컷씬)"

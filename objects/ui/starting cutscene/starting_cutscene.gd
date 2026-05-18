@@ -2,6 +2,7 @@ extends Node2D
 
 
 @export var animation_player : AnimationPlayer
+@export_file("*.tscn") var game : String
 
 
 func _ready() -> void:
@@ -10,4 +11,4 @@ func _ready() -> void:
 
 
 func _on_animation_player_animation_finished(_animation_name : String):
-  pass
+  SceneLoader.load_scene(game)
