@@ -3,6 +3,8 @@ extends CharacterBody2D
 
 @export var player_data : PlayerData
 @export var friction : float = 0.7
+@export var item_component : ItemComponent
+@export var audio_player : AudioStreamPlayer
 
 
 func _physics_process(_delta: float) -> void:

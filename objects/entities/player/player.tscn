@@ -3,21 +3,21 @@
 [ext_resource type="Script" uid="uid://dfm0ykfnjexk3" path="res://objects/entities/player/player.gd" id="1_cqmt1"]
 [ext_resource type="Script" uid="uid://6bl6qh1vtofb" path="res://objects/entities/player/player_data.gd" id="2_g5vne"]
 [ext_resource type="Texture2D" uid="uid://r25bffijw23w" path="res://objects/entities/player/chiikawa toilet.jpg" id="3_am2ha"]
+[ext_resource type="Script" uid="uid://b512o6q55nk7g" path="res://objects/components/item component/item_component.gd" id="4_am2ha"]
 
 [sub_resource type="Resource" id="Resource_am2ha"]
 script = ExtResource("2_g5vne")
 speed = 100.0
-interaction_range = 100.0
 metadata/_custom_type_script = "uid://6bl6qh1vtofb"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cqmt1"]
 radius = 54.451813
 
-[node name="Player" type="CharacterBody2D" unique_id=1092375324 node_paths=PackedStringArray("interaction_area")]
+[node name="Player" type="CharacterBody2D" unique_id=1092375324 node_paths=PackedStringArray("item_component")]
 script = ExtResource("1_cqmt1")
 player_data = SubResource("Resource_am2ha")
 friction = 0.8
-interaction_area = NodePath("")
+item_component = NodePath("ItemComponent")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1953030713]
 scale = Vector2(0.15476187, 0.15476191)
@@ -25,3 +25,7 @@ texture = ExtResource("3_am2ha")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1112672505]
 shape = SubResource("CircleShape2D_cqmt1")
+
+[node name="ItemComponent" type="Node" parent="." unique_id=588554715]
+script = ExtResource("4_am2ha")
+metadata/_custom_type_script = "uid://b512o6q55nk7g"

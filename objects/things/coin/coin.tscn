@@ -6,9 +6,13 @@
 [ext_resource type="Script" uid="uid://p021gak3coyy" path="res://objects/components/interactable/interactable.gd" id="2_dj64t"]
 [ext_resource type="Script" uid="uid://bd1v7x74l2mf1" path="res://objects/components/interactable/interaction_effect.gd" id="5_qg7y3"]
 [ext_resource type="Script" uid="uid://carr4d52hy5oj" path="res://objects/components/interactable/interaction_condition.gd" id="5_r5shi"]
-[ext_resource type="Resource" uid="uid://c8gxfur6stu7b" path="res://objects/components/interactable/interaction_effects/interaction_remove.tres" id="6_ngx64"]
 [ext_resource type="Script" uid="uid://clysno2p1jvco" path="res://objects/components/interactable/interaction_conditions/interaction_cond_points.gd" id="6_re7nn"]
 [ext_resource type="Script" uid="uid://dceprygfu6g7f" path="res://objects/components/interactable/interaction_effects/interact_effect_points_add.gd" id="9_i6ape"]
+[ext_resource type="PackedScene" uid="uid://dip6eprrgefyb" path="res://objects/things/spinach.tscn" id="10_i6ape"]
+[ext_resource type="Script" uid="uid://b1pih8pixo6x1" path="res://objects/components/interactable/interaction_effects/interact_effect_add_item.gd" id="10_re7nn"]
+[ext_resource type="Script" uid="uid://dlnb2se5wgnfv" path="res://objects/components/interactable/interaction_effects/interact_effect_play_sound.gd" id="12_4lnsf"]
+[ext_resource type="Script" uid="uid://ca4b8fg2tiwac" path="res://objects/components/interactable/interaction_effects/interact_effect_remove.gd" id="13_4lnsf"]
+[ext_resource type="AudioStream" uid="uid://bdhym8ktbsblf" path="res://res/sounds/sound.ogg" id="13_pghhl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u8rh8"]
 shader = ExtResource("2_8ym68")
@@ -18,9 +22,23 @@ shader_parameter/progress = 0.0
 script = ExtResource("6_re7nn")
 metadata/_custom_type_script = "uid://clysno2p1jvco"
 
+[sub_resource type="Resource" id="Resource_i6ape"]
+script = ExtResource("10_re7nn")
+items_to_add = Array[PackedScene]([ExtResource("10_i6ape")])
+metadata/_custom_type_script = "uid://b1pih8pixo6x1"
+
+[sub_resource type="Resource" id="Resource_njg0r"]
+script = ExtResource("12_4lnsf")
+sound = ExtResource("13_pghhl")
+metadata/_custom_type_script = "uid://dlnb2se5wgnfv"
+
 [sub_resource type="Resource" id="Resource_4lnsf"]
 script = ExtResource("9_i6ape")
 metadata/_custom_type_script = "uid://dceprygfu6g7f"
+
+[sub_resource type="Resource" id="Resource_pghhl"]
+script = ExtResource("13_4lnsf")
+metadata/_custom_type_script = "uid://ca4b8fg2tiwac"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8ym68"]
 radius = 55.443665
@@ -43,7 +61,7 @@ texture = ExtResource("1_r70bt")
 [node name="Interactable" type="Area2D" parent="." unique_id=1607860232]
 script = ExtResource("2_dj64t")
 interaction_conditions = Array[ExtResource("5_r5shi")]([SubResource("Resource_fv22e")])
-interaction_effects = Array[ExtResource("5_qg7y3")]([ExtResource("6_ngx64"), SubResource("Resource_4lnsf")])
+interaction_effects = Array[ExtResource("5_qg7y3")]([SubResource("Resource_i6ape"), SubResource("Resource_njg0r"), SubResource("Resource_4lnsf"), SubResource("Resource_pghhl")])
 interaction_time = 0.2
 metadata/_custom_type_script = "uid://p021gak3coyy"
 

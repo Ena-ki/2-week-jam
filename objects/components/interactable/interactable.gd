@@ -1,5 +1,6 @@
 class_name Interactable
 extends Area2D
+#fix naming convention, the names are so ass
 
 signal interacted(player: Player)
 signal interaction_progress_changed(interaction_progress: float)
